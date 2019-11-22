@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card text-center">
+            <div class="card-header">
+                欢迎 <strong><%= username %></strong> 光临
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">句子</h5>
+                <p class="card-text">沧桑为饮，年华果腹，岁月做衣！</p>
+                <a href="http://localhost:3000/logout" id="logout" class="btn btn-primary">退出</a>
+            </div>
+            <div class="card-footer text-muted">
+                <%= new Date() %>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
