@@ -12,4 +12,6 @@ locals 和 req.session 的差异说明
 
 规整路由
 
-退出时需要删除数据库中的 sessionid ?
+退出时需要删除数据库中的 sessionid
+
+错误处理界面

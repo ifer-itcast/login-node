@@ -1,3 +1,4 @@
 module.exports = (err, req, res, next) => {
-    res.send(err.message);
+    const errObj = JSON.parse(err);
+    res.send(errObj.message);
 };

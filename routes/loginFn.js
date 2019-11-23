@@ -2,7 +2,7 @@ const User = require('../model/user');
 const {
     compareSecret
 } = require('../utils/hash');
-module.exports = async (req, res) => {
+module.exports = async (req, res, next) => {
     // Step1: 查询用户是否存在
     const {
         username,
@@ -21,6 +21,6 @@ module.exports = async (req, res) => {
             // 用户名或密码错误
         }
     } else {
-
+        next(JSON.stringify({message: '此用户名不存在'}));
     }
 };

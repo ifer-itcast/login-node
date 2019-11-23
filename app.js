@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 
 app.set('view engine', 'ejs'); // 指定模板引擎
+
+app.use(morgan('short')); // 请求日志
 app.use(express.static('public')); // 开启静态资源服务器
 app.use(bodyParser.urlencoded({
     extended: false
@@ -23,9 +26,14 @@ app.use(require('./middleware/loginGuard'));
 app.use(require('./routes'));
 // ...................页面路由结束...................
 
-
 // ...................错误处理开始...................
 app.use(require('./middleware/errorHandle'));
 // ...................错误处理结束...................
+
+// ...................404 开始.................
+app.use((req, res, next) => {
+    res.status(404).render('404');
+});
+// ...................404 结束.................
 
 app.listen(3000, () => console.log('服务器运行成功：http://localhost:3000'));
